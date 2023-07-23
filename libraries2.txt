@@ -37,3 +37,7 @@ https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/lwjg
 https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/lwjgl-platform-2.9.4-nightly-20150209.jar
 https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/lwjgl-2.9.2-nightly-20140822.jar
 https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/lwjgl_util-2.9.2-nightly-20140822.jar
+https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/snakeyaml-2.0.jar
+https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/ViaBackwards-4.7.0-1.20-pre1-SNAPSHOT.jar
+https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/ViaRewind-2.0.4-SNAPSHOT.jar
+https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/ViaVersion-4.7.0-1.20-pre2-SNAPSHOT.jar

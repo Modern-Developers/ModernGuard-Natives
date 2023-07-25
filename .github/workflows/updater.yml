@@ -23,16 +23,13 @@ jobs:
           cd $GITHUB_WORKSPACE
           find . -type f -exec sh -c 'echo "https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/{}" >> libraries2.txt' \;
 
-      - name: Set Git identity
-        run: |
-          git config user.name "siroo2137"
-          git config user.email "dawideqgamesonline@gmail.com"
-
       - name: Commit and Push Changes
         env:
           TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
           cd $GITHUB_WORKSPACE
+          git config user.name "siroo2137"
+          git config user.email "dawideqgamesonline@gmail.com"
           git add --all
           git commit --allow-empty -m "[Updater] Updating hashes and links."
           # Use the token for authentication during push

@@ -1,0 +1,33 @@
+name: Updater
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  updater:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Generate Hashes
+        run: |
+          cd $GITHUB_WORKSPACE
+          find . -type f -exec sha256sum {} + > hashes2.txt
+          awk '{print "- " $1 "  " $2}' hashes2.txt > hashes.txt
+
+      - name: Get list of file names
+        id: get_filenames
+        run: |
+          cd $GITHUB_WORKSPACE
+          find . -type f -exec basename https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/{} >> libraries2.txt
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "siroo2137"
+          git config --global user.email "dawideqgamesonline@gmail.com"
+          git add hashes.txt
+          git add libraries2.txt
+          git commit -m "[Updater] Updating hashes and links."
+          git push

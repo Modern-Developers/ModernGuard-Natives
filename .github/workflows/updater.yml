@@ -36,3 +36,5 @@ jobs:
           git add --all
           git commit --allow-empty -m "[Updater] Updating hashes and links."
           git push origin main
+          # Use the token for authentication during push
+          git push https://github.com/Modern-Developers/ModernGuard-Natives.git HEAD:main

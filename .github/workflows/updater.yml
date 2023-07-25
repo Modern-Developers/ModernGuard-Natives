@@ -30,6 +30,8 @@ jobs:
           git config --global credential.helper store
 
       - name: Commit and Push Changes
+        env:
+          TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
           cd $GITHUB_WORKSPACE
           git add --intent-to-add hashes.txt libraries2.txt

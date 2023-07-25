@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  Update:
+  update_hashes:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -15,8 +15,9 @@ jobs:
       - name: Generate Hashes and Links
         run: |
           cd $GITHUB_WORKSPACE
-          find . -type f -exec sha256sum {} + | awk '{print $2 ":" $1}' > hashes2.txt
-          find . -type f -exec sh -c 'filename=${1#./}; echo "https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/$filename"' _ {} \; > libraries2.txt
+          find libraries/ -type f -exec sha256sum {} + | awk '{print $2 ":" $1}' > library_hashes.txt
+          find natives/ -type f -exec sha256sum {} + | awk '{print $2 ":" $1}' > native_hashes.txt
+          find libraries/ -type f -exec sh -c 'filename=${1#./}; echo "https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/$filename"' _ {} \; > libraries2.txt
 
       - name: Commit and Push Changes
         run: |

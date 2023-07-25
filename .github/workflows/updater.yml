@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   update_hashes:
@@ -24,8 +25,6 @@ jobs:
           find . -type f -exec sh -c 'echo "https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/{}" >> libraries2.txt' \;
 
       - name: Commit and Push Changes
-        env:
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
           cd $GITHUB_WORKSPACE
           git config user.name "siroo2137"

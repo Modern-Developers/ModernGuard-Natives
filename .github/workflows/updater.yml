@@ -1,3 +1,4 @@
+script:
 name: Updater
 on:
   push:
@@ -24,8 +25,6 @@ jobs:
           find . -type f -exec sh -c 'echo "https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/{}" >> libraries2.txt' \;
 
       - name: Commit and Push Changes
-        env:
-          TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
           cd $GITHUB_WORKSPACE
           git config user.name "siroo2137"
@@ -33,5 +32,4 @@ jobs:
           git add --all
           git commit --allow-empty -m "[Updater] Updating hashes and links."
           # Use the token for authentication during push
-          git push https://github.com/Modern-Developers/ModernGuard-Natives.git HEAD:main
-            > $TOKEN
+          git push https://${{secrets.PERSONAL_ACCESS_TOKEN}}@github.com/Modern-Developers/ModernGuard-Natives.git

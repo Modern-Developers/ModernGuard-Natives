@@ -6,22 +6,17 @@ on:
   workflow_dispatch:
 
 jobs:
-  update_hashes:
+  Update:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
 
-      - name: Generate Hashes
+      - name: Generate Hashes and Links
         run: |
           cd $GITHUB_WORKSPACE
           find . -type f -exec sha256sum {} + | awk '{print $2 ":" $1}' > hashes2.txt
-
-      - name: Get list of file names
-        id: get_filenames
-        run: |
-          cd $GITHUB_WORKSPACE
-          find . -type f -exec sh -c 'filename=$(echo "{}" | sed "s/^\.\///"); echo "https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/${filename}" > libraries2.txt' \;
+          find . -type f -exec sh -c 'filename=${1#./}; echo "https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/$filename"' _ {} \; > libraries2.txt
 
       - name: Commit and Push Changes
         run: |

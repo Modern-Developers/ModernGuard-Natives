@@ -5,7 +5,7 @@ on:
       - main
 
 jobs:
-  updater:
+  update_hashes:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -21,7 +21,8 @@ jobs:
         id: get_filenames
         run: |
           cd $GITHUB_WORKSPACE
-          find . -type f -exec basename https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/{} >> libraries2.txt
+          find . -type f -exec basename {} >> libraries2.txt
+          find . -type f -exec sh -c 'echo "https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/{}" >> libraries2.txt' \;
 
       - name: Commit and Push Changes
         run: |

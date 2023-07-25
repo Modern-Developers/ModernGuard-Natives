@@ -45,3 +45,4 @@ https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/jack
 https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/failureaccess-1.0.1.jar
 https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/jackson-dataformat-xml-2.15.2.jar
 https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/stax2-api-4.2.1.jar
+https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/woodstox-core-6.5.1.jar

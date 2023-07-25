@@ -24,11 +24,14 @@ jobs:
           find . -type f -exec basename {} >> libraries2.txt
           find . -type f -exec sh -c 'echo "https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/{}" >> libraries2.txt' \;
 
+      - name: Set Git identity
+        run: |
+          git config user.name "siroo2137"
+          git config user.email "dawideqgamesonline@gmail.com"
+
       - name: Commit and Push Changes
         run: |
-          git config --global user.name "siroo2137"
-          git config --global user.email "dawideqgamesonline@gmail.com"
-          git add hashes.txt
-          git add libraries2.txt
-          git commit -m "[Updater] Updating hashes and links."
+          cd $GITHUB_WORKSPACE
+          git add --intent-to-add hashes.txt libraries2.txt
+          git commit --allow-empty -m "[Updater] Updating hashes and links."
           git push

@@ -41,3 +41,4 @@ https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/snak
 https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/ViaBackwards-4.7.0-1.20-pre1-SNAPSHOT.jar
 https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/ViaRewind-2.0.4-SNAPSHOT.jar
 https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/ViaVersion-4.7.0-1.20-pre2-SNAPSHOT.jar
+https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/libraries/jackson-databind-2.15.2.jar

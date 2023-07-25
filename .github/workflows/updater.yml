@@ -1,3 +1,4 @@
+script:
 name: Updater
 on:
   push:
@@ -31,4 +32,4 @@ jobs:
           git add --all
           git commit --allow-empty -m "[Updater] Updating hashes and links."
           # Use the token for authentication during push
-          git push https://${{secrets.PERSONAL_ACCESS_TOKEN}}@github.com/Modern-Developers/ModernGuard-Natives.git
+          git push https://Modern-Developers:${{secrets.PERSONAL_ACCESS_TOKEN}}@github.com/Modern-Developers/ModernGuard-Natives.git

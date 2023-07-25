@@ -25,12 +25,11 @@ jobs:
 
       - name: Commit and Push Changes
         env:
-          TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
           cd $GITHUB_WORKSPACE
           git config user.name "siroo2137"
           git config user.email "dawideqgamesonline@gmail.com"
           git add --all
           git commit --allow-empty -m "[Updater] Updating hashes and links."
-          # Use the token for authentication during push
-          git push https://siroo2137:{$TOKEN}@github.com/Modern-Developers/ModernGuard-Natives.git
+          git push

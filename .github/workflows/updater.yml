@@ -18,6 +18,7 @@ jobs:
           find libraries/ -type f -exec sha256sum {} + | awk '{print $2 ":" $1}' > library_hashes.txt
           find natives/ -type f -exec sha256sum {} + | awk '{print $2 ":" $1}' > native_hashes.txt
           find libraries/ -type f -exec sh -c 'filename=${1#./}; echo "https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/$filename"' _ {} \; > libraries2.txt
+          find natives/ -type f -exec sh -c 'filename=${1#./}; echo "https://github.com/Modern-Developers/ModernGuard-Natives/raw/main/$filename"' _ {} \; > natives.txt
 
       - name: Commit and Push Changes
         run: |
